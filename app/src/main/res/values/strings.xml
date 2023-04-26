@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MeasureUp</string>
+    <string name="description_image_background">Abstract background image</string>
+    <string name="text_button_light">Light sensor</string>
+    <string name="ic_lightbulb_description">Lightbulb icon</string>
+    <string name="text_button_temperature">Thermometer</string>
+    <string name="ic_thermometer_description">Thermometer icon</string>
+    <string name="text_button_accelerometer">Accelerometer</string>
+    <string name="ic_accelerometer_description">Accelerometer</string>
+</resources>

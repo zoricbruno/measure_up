@@ -1,0 +1,23 @@
+package hr.ferit.measureup.di
+
+import hr.ferit.measureup.sensors.Accelerometer
+import hr.ferit.measureup.sensors.LightSensor
+import hr.ferit.measureup.sensors.Thermometer
+import hr.ferit.measureup.ui.viewmodels.AccelerometerViewModel
+import hr.ferit.measureup.ui.viewmodels.LightSensorViewModel
+import hr.ferit.measureup.ui.viewmodels.ThermometerViewModel
+import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
+
+val sensorsModule = module {
+    single<LightSensor> { LightSensor(androidContext()) }
+    single<Accelerometer> { Accelerometer(androidContext()) }
+    single<Thermometer> { Thermometer(androidContext()) }
+}
+
+val viewmodelModule = module {
+    viewModel<LightSensorViewModel> { LightSensorViewModel(get<LightSensor>()) }
+    viewModel<AccelerometerViewModel> { AccelerometerViewModel(get<Accelerometer>()) }
+    viewModel<ThermometerViewModel> { ThermometerViewModel(get<Thermometer>()) }
+}
