@@ -2,7 +2,6 @@ package hr.ferit.measureup.ui.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
@@ -15,9 +14,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import hr.ferit.measureup.R
-import hr.ferit.measureup.ui.navigation.Screen
 import hr.ferit.measureup.ui.viewmodels.AccelerometerViewModel
-import hr.ferit.measureup.ui.viewmodels.LightSensorViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -30,18 +27,18 @@ fun AccelerometerScreen(viewModel: AccelerometerViewModel = koinViewModel()) {
             .fillMaxSize()
             .background(Color.Black),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = "x: ${x.toString()}",
+            text = "x: $x",
             color = colorResource(id = R.color.dark_yellow),
         )
         Text(
-            text = "y: ${y.toString()}",
+            text = "y: $y",
             color = colorResource(id = R.color.dark_yellow),
         )
         Text(
-            text = "z: ${z.toString()}",
+            text = "z: $z",
             color = colorResource(id = R.color.dark_yellow),
         )
     }
