@@ -1,5 +1,6 @@
 package hr.ferit.measureup.ui.screen
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,15 +15,20 @@ import androidx.compose.ui.layout.ContentScale.Companion.Crop
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import hr.ferit.measureup.R
 import hr.ferit.measureup.ui.components.NavigationButton
 import hr.ferit.measureup.ui.navigation.Screen
+import hr.ferit.measureup.ui.viewmodels.HomeViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(navController: NavController, homeViewModel: HomeViewModel = koinViewModel()) {
+    val sensorInfos = homeViewModel.sensorInfos.collectAsStateWithLifecycle()
+
+    Log.d("{Sensors}", sensorInfos.toString())
+
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Image(
             painter = painterResource(id = R.drawable.background),
@@ -56,10 +62,4 @@ fun HomeScreen(navController: NavController) {
             )
         }
     }
-}
-
-@Preview
-@Composable
-fun HomeScreenPreview() {
-    HomeScreen(navController = rememberNavController())
 }
