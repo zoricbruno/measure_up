@@ -1,4 +1,4 @@
-package hr.ferit.measureup.sensors
+package hr.ferit.measureup.sensing
 
 import android.content.Context
 import android.hardware.Sensor

@@ -1,8 +1,8 @@
 package hr.ferit.measureup.di
 
-import hr.ferit.measureup.sensors.Accelerometer
-import hr.ferit.measureup.sensors.LightSensor
-import hr.ferit.measureup.sensors.Thermometer
+import hr.ferit.measureup.sensing.sensors.Accelerometer
+import hr.ferit.measureup.sensing.sensors.LightSensor
+import hr.ferit.measureup.sensing.sensors.Thermometer
 import hr.ferit.measureup.ui.viewmodels.AccelerometerViewModel
 import hr.ferit.measureup.ui.viewmodels.LightSensorViewModel
 import hr.ferit.measureup.ui.viewmodels.ThermometerViewModel

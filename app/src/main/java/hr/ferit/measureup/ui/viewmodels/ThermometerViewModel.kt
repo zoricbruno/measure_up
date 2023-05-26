@@ -1,7 +1,7 @@
 package hr.ferit.measureup.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
-import hr.ferit.measureup.sensors.MeasurableSensor
+import hr.ferit.measureup.sensing.MeasurableSensor
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class ThermometerViewModel(private val thermometer: MeasurableSensor) : ViewModel() {
