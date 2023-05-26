@@ -1,9 +1,8 @@
 package hr.ferit.measureup.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
-import hr.ferit.measureup.sensors.MeasurableSensor
+import hr.ferit.measureup.sensing.MeasurableSensor
 import kotlinx.coroutines.flow.MutableStateFlow
-import org.koin.core.KoinApplication.Companion.init
 
 class AccelerometerViewModel(private val accelerometer: MeasurableSensor) : ViewModel() {
     var x = MutableStateFlow(0.0f)

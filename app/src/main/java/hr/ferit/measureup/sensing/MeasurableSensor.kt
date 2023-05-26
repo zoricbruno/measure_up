@@ -1,4 +1,4 @@
-package hr.ferit.measureup.sensors
+package hr.ferit.measureup.sensing
 
 abstract class MeasurableSensor(
     protected val sensorType: Int,
